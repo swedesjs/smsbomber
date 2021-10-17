@@ -13,11 +13,11 @@ class Bomber {
         _services = services ?? serviceList,
         _phoneNumber = PhoneParser.fromRaw(phone) {
     if (countyList[_phoneNumber.isoCode] != _country) {
-      throw Exception("Phone is invalid");
+      throw const BomberException("Phone is invalid");
     }
 
     if (!PhoneParser.validate(_phoneNumber, PhoneNumberType.mobile)) {
-      throw Exception("Phone is invalid");
+      throw const BomberException("Phone is invalid");
     }
   }
 

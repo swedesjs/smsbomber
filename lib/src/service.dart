@@ -14,7 +14,7 @@ class Service {
 
   Future<void> init(PhoneNumber phone) async {
     if (countyList[phone.isoCode] != country) {
-      throw Exception("Phone is invalid");
+      throw const BomberException("Phone is invalid");
     }
 
     await _process(this, phone.nsn);
