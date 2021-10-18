@@ -9,3 +9,11 @@ void main() async {
   await bomber.start();
 }
 ```
+
+# A warning!
+
+> You are responsible for any actions!
+
+> I am not forcing you to use this software!
+
+> Do everything at your own peril and risk!
