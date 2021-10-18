@@ -2,6 +2,14 @@ part of smsbomber;
 
 typedef _Process = Future<Response> Function(Service service, String phone);
 
+Future<Response> _serviceProcessFunctionDefault(
+  Service service,
+  String phone,
+) =>
+    _dio.post(
+      service.url.toString().replaceFirst("%7Bphone%7D", "$phone"),
+    );
+
 class Service {
   final String name;
   final Uri url;
@@ -12,7 +20,7 @@ class Service {
     required this.name,
     required this.url,
     required this.country,
-    required _Process process,
+    _Process process = _serviceProcessFunctionDefault,
   }) : _process = process;
 
   Future<void> init(PhoneNumber phone) async {
@@ -21,7 +29,7 @@ class Service {
     }
 
     final response = await _process(this, phone.nsn);
-    
+
     print(
       "Init(name: $name, statusCode: ${response.statusCode}, statusMessage: ${response.statusMessage});",
     );

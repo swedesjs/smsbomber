@@ -13,8 +13,7 @@ final serviceList = [
       host: "www.citilink.ru",
       path: "registration/confirm/phone/+7{phone}",
     ),
-    country: Country.RU,
-    process: _serviceProcessFunctionDefault,
+    country: Country.RU
   ),
   Service(
     name: "Tele2",
@@ -30,6 +29,3 @@ final serviceList = [
     ),
   )
 ];
-
-Future<Response> _serviceProcessFunctionDefault(Service service, String phone) =>
-    _dio.post(service.url.toString().replaceFirst("%7Bphone%7D", "$phone"));
