@@ -30,6 +30,7 @@ class Service {
 
     final response = await _process(this, phone.nsn);
 
+    // ignore: avoid_print
     print(
       "Init(name: $name, statusCode: ${response.statusCode}, statusMessage: ${response.statusMessage});",
     );
