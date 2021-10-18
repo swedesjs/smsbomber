@@ -1,3 +1,5 @@
 part of smsbomber;
 
-const countryList = {"RU": Country.RU};
+const countryList = <String, Country>{
+  "RU": Country.RU,
+};

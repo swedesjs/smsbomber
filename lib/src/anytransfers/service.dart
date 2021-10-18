@@ -1,6 +1,6 @@
 part of smsbomber;
 
-final serviceList = [
+final serviceList = <Service>[
   Service(
     name: "Citilink",
     url: Uri(
@@ -8,7 +8,7 @@ final serviceList = [
       host: "www.citilink.ru",
       path: "registration/confirm/phone/+7{phone}",
     ),
-    country: Country.RU
+    country: Country.RU,
   ),
   Service(
     name: "Tele2",
