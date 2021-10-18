@@ -1,6 +1,6 @@
 part of smsbomber;
 
-typedef _Process = Future Function(Service service, String phone);
+typedef _Process = Future<Response> Function(Service service, String phone);
 
 class Service {
   final String name;
@@ -20,6 +20,10 @@ class Service {
       throw const BomberException("The phone number does not match the country indicated");
     }
 
-    await _process(this, phone.nsn);
+    final response = await _process(this, phone.nsn);
+    
+    print(
+      "Init(name: $name, statusCode: ${response.statusCode}, statusMessage: ${response.statusMessage});",
+    );
   }
 }
