@@ -16,7 +16,6 @@ include: package:pedantic/analysis_options.yaml
 
 analyzer:
   errors:
-    prefer_single_quotes: ignore
     prefer_final_locals: error
     iterable_contains_unrelated_type: error
     list_remove_unrelated_type: error
@@ -26,15 +25,16 @@ analyzer:
     prefer_const_declarations: warning
 linter:
   rules:
-    - camel_case_types
-    - prefer_double_quotes
-    - prefer_const_declarations
-    - prefer_final_locals
-    - avoid_print
-    - iterable_contains_unrelated_type
-    - list_remove_unrelated_type
-    - curly_braces_in_flow_control_structures
-    - directives_ordering
+    camel_case_types: true
+    prefer_double_quotes: true
+    prefer_const_declarations: true
+    prefer_final_locals: true
+    avoid_print: true
+    iterable_contains_unrelated_type: true
+    list_remove_unrelated_type: true
+    curly_braces_in_flow_control_structures: true
+    directives_ordering: true
+    prefer_single_quotes: false
 # analyzer:
 #   exclude:
 #     - path/to/excluded/files/**
