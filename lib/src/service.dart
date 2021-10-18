@@ -24,7 +24,7 @@ class Service {
   }) : _process = process;
 
   Future<void> init(PhoneNumber phone) async {
-    if (countyList[phone.isoCode] != country) {
+    if (countryList[phone.isoCode] != country) {
       throw const BomberException("The phone number does not match the country indicated");
     }
 

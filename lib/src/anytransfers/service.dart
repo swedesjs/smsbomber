@@ -1,10 +1,5 @@
 part of smsbomber;
 
-final _dio = Dio(BaseOptions(validateStatus: (status) => true));
-
-enum Country { RU }
-const countyList = {"RU": Country.RU};
-
 final serviceList = [
   Service(
     name: "Citilink",
