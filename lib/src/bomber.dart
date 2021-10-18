@@ -8,8 +8,11 @@ class Bomber {
   final List<Service> _services;
   final PhoneNumber _phoneNumber;
 
-  Bomber({required String phone, required Country country, List<Service>? services})
-      : _country = country,
+  Bomber({
+    required String phone,
+    required Country country,
+    List<Service>? services
+  })  : _country = country,
         _services = services ?? serviceList,
         _phoneNumber = PhoneParser.fromRaw(phone) {
     if (countyList[_phoneNumber.isoCode] != _country) {

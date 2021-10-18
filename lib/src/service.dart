@@ -8,9 +8,12 @@ class Service {
   final Country country;
   final _Process _process;
 
-  const Service(
-      {required this.name, required this.url, required this.country, required _Process process})
-      : _process = process;
+  const Service({
+    required this.name,
+    required this.url,
+    required this.country,
+    required _Process process,
+  }) : _process = process;
 
   Future<void> init(PhoneNumber phone) async {
     if (countyList[phone.isoCode] != country) {
