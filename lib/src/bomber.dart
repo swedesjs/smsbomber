@@ -15,7 +15,8 @@ class Bomber {
   })  : _country = country,
         _services = services ?? serviceList,
         _phoneNumber = PhoneParser.fromRaw(phone) {
-    if (countryList[_phoneNumber.isoCode] != _country) {
+    // ignore: unrelated_type_equality_checks
+    if (_country != _phoneNumber.isoCode) {
       throw const BomberException("The phone number does not match the country indicated");
     }
 
